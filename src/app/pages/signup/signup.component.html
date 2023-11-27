@@ -1,0 +1,109 @@
+<h2>SIGNUP</h2>
+<div class="container">
+
+    <form [formGroup]="signupForm" action="#" method="post" class="form-bx" (ngSubmit)="onsubmit()">
+    <div class="row">  
+        <label for="name">User name</label>  
+        <input type="text" formControlName="username"  id="name" placeholder="Please enter your name">
+        @if(submitted){
+            @if(signupForm.controls["username"].invalid && signupForm.controls["username"].dirty || signupForm.controls["username"].touched){
+                <div class="item-error">
+                    @if(signupForm.controls["username"].errors?.['required']){
+                        This field is required.
+                    }@else if (signupForm.controls["username"].errors?.['minlength']) {
+                        Minimum length must be > 3
+                    }
+                </div>
+            }   
+
+        }
+          
+    </div>
+
+    <div class="row">  
+        <label for ="email">Email</label>  
+        <input type="text" formControlName="email" id="email" placeholder="Please enter your email">
+        @if(submitted){
+            @if(signupForm.controls["email"].invalid && signupForm.controls["email"].dirty || signupForm.controls["email"].touched){
+                <div class="item-error">
+                    @if(signupForm.controls["email"].errors?.['required']){
+                        This field is required.
+                    }@else if (signupForm.controls["email"].errors?.['email']) {
+                       Invalid email.
+                    }
+                </div>
+            }    
+
+        }
+      
+    </div>
+
+    <div class="row">  
+        <label for="phoneno">Phone no</label>  
+        <input type="text" formControlName="phoneno"  id="phoneno" placeholder="Please enter your phonenumber">
+        @if(submitted){
+            @if(signupForm.controls["phoneno"].invalid && signupForm.controls["phoneno"].dirty || signupForm.controls["phoneno"].touched){
+                <div class="item-error">
+                    @if(signupForm.controls["phoneno"].errors?.['required']){
+                        This field is required.
+                    }
+                        @else if (signupForm.controls["phoneno"].errors?.['pattern']) {
+                            Invalid phone number format. Please provide a 10-digit integer phone number.
+                           
+                        }
+                </div>
+            }      
+
+        }
+          
+    </div>
+
+    <div class="row">    
+        <label for="password">Password</label>
+        <input type="password" formControlName="password"  id="password" placeholder="Please enter your password" >
+        @if(submitted){
+            @if(signupForm.controls["password"].invalid && signupForm.controls["password"].dirty || signupForm.controls["password"].touched){
+                <div class="item-error">
+                    @if(signupForm.controls["password"].errors?.['required']){
+                        This field is required.
+                    }@else if (signupForm.controls["password"].errors?.['pattern']) {
+                        Password must contain atleast 6 characters, at least one uppercase letter, one lowercase letter and a special character.
+                    }
+                </div>
+            }
+        }
+       
+    </div>
+
+    <div class="row">    
+        <label for="password2">Confirm Password</label>
+        <input type="password" formControlName="password2"  id="password" placeholder="Confirm your password" >
+        @if(submitted){
+            @if(signupForm.controls["password2"].invalid && signupForm.controls["password2"].dirty || signupForm.controls["password2"].touched){
+                <div class="item-error">
+                    @if(signupForm.controls["password"].errors?.['required']){
+                        This field is required.
+                    }@else if (signupForm.controls["password2"].value != signupForm.controls["password"].value) {
+                        Password doesn't Match!
+                    }
+                </div>
+            }     
+            
+        }
+        
+    </div>
+    <div class="signup-status">
+        @if(!signupSuccess){
+            @if (errorMessage) {
+                {{errorMessage}}
+            }
+        }
+    </div>
+
+    <div class="form-end">
+        <p>Have an account?<br><a href="login" target="_main">Click here to login</a></p>
+        <button type="submit">SIGNUP</button>
+        
+    </div>  
+</form>
+</div>
