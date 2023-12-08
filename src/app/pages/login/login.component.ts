@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiserviceService } from '../../apiservice.service';
 import { error, log } from 'console';
+import { environment } from '../../../environments/environment.development';
+import { Router, RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule,ReactiveFormsModule,RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -20,7 +22,7 @@ export class LoginComponent {
   errorMessage:string |any;
   
 
-  constructor(private fb : FormBuilder,private http:ApiserviceService){}
+  constructor(private fb : FormBuilder,private http:ApiserviceService,private router:Router){}
  
   ngOnInit(){
     this.loginForm=this.fb.group({
@@ -48,13 +50,20 @@ onsubmit(){
     password:formValues.password
   }
   console.log(userData);
-  
-  const apiUrl="http://localhost:8084/api/v1/auth/login";
-  this.http.postReturn(apiUrl,userData).subscribe((data:any)=>{
-    console.log(data);
+  this.http.postReturn(`${environment.BASE_API_URL}/auth/login`,userData).subscribe((data:any)=>{
     if(data.status){
       this.loginSuccess = true;
       this.loginForm.reset();
+      const jwtToken:string = data.response;
+      localStorage.setItem("token",jwtToken)
+      this.http.getReturn(`${environment.BASE_API_URL}/customer/getCustomerDetails`).subscribe((data)=>{
+        localStorage.setItem("customer",JSON.stringify(data))        
+        this.router.navigate(['/home'])
+      },(error)=>{
+        console.log(error);
+        this.errorMessage = data.response;
+      this.loginSuccess = false;
+      })
 
     }else{
       this.errorMessage = data.response;
@@ -62,6 +71,8 @@ onsubmit(){
 
     }
   })
+  
+
   this.submitted=false;
   
  }

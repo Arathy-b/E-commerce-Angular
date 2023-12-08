@@ -1,0 +1,27 @@
+h1{
+    color:rgb(69, 126, 143);
+    text-align: center;
+}
+.add-product{
+    text-align: center;
+}
+.form-input{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    justify-content: center;
+    color:black;
+  }
+  form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items:center ;
+    width: 100%;
+  }
+  button{
+    color: rgb(69, 126, 143);
+  }

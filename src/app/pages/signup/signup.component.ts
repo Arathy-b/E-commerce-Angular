@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { error } from 'console';
 import { ApiserviceService } from '../../apiservice.service';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule,ReactiveFormsModule,RouterModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
 })
@@ -18,7 +19,7 @@ export class SignupComponent {
   signupSuccess:boolean | any;
   errorMessage:string |any;
 
-  constructor(private fb:FormBuilder,private http:ApiserviceService){}
+  constructor(private fb:FormBuilder,private http:ApiserviceService,private router:Router){}
   ngOnInit(){
     this.signupForm=this.fb.group({
       username:['',[Validators.required,Validators.minLength(3)]],
@@ -52,6 +53,7 @@ export class SignupComponent {
         if(data.status){
           this.signupSuccess = true;
           this.signupForm.reset();
+          this.router.navigate(['login'])
     
         }else{
           this.errorMessage = data.response;

@@ -1,0 +1,23 @@
+.featuredProducts{
+    margin-top: 10px;
+    height: 100px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+}
+.featuredProduct-image{
+    width: 60px;
+}
+.featuredProduct-image img{
+    width: 50px;
+    height: 50px;
+}
+.featuredProduct-name{
+    font-size: 14px;
+    font-weight: 550;
+    color:#474545
+}
+.featuredProduct-list{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}

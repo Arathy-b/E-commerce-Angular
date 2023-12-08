@@ -2,10 +2,12 @@
 #navbar{
     color:white;
     display:inline-block;
+    margin-top: 10px;
 }
-span{
+#navbar > span{
     color: rgb(247, 247, 247);
-    font-size: 24px;
+    font-size: 26px;
+    text-transform: uppercase;
 }
 
 .mydisplaybar{
@@ -17,15 +19,31 @@ span{
     justify-content: center;
     align-items: center;
 }
-.bar
+.item
 {
     color: white;
     display:flex;
     justify-content: end;
-    gap:10px;
+    gap:15px;
+    font-size: 18px;
     align-items: center;
-
+    
 }
 a{
-    color: aliceblue;
+    text-decoration: none;
+    color: #f0f8ff;
+    gap:10px;
+}
+.details{
+    display:flex;
+    justify-content: end;
+    gap:10px;
+    align-items: end;
+
+}
+.items{
+    flex: 1;
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
 }

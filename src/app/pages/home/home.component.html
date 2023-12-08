@@ -1,0 +1,22 @@
+<div class="outer-container">
+  <app-hometop-navbar></app-hometop-navbar>
+</div>
+
+  <section class="trendy-products">
+    <h2>Trendy Products</h2>
+    <div class="product-list">
+      <div class="product-item">
+        @for (product of trendingProducts;track product.id){
+        <img [src]="product.image" alt="{{product.name}}">
+        <div class="product-details">
+          <h3>{{product.title}}</h3>
+          <p>Price: {{product.price}}</p>
+          <a>View Details</a>
+          <button >Add to Cart</button>
+        </div>
+      }
+      </div>
+    </div>
+  </section>
+
+<!-- (click)="addToCart(product.id)" -->

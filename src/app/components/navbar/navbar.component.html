@@ -1,9 +1,23 @@
 <div class="mydisplaybar">
     <div id="navbar">
-        <span>E-CommerceWebsite</span>
+        <span [routerLink]="'/home'">E-Commerce Website</span>
     </div>
-    <div class="bar">
-        <a href="about" target="_main">About</a>
-        <a href="contact" target="_main">Contact Us</a>
+    <div class="items">
+        <div class="item">
+            <a href="" >About</a>
+            <a href="" >Contact Us</a>
+ 
+        </div>
+        <div class="item">
+            @if(username){
+                <p>{{username}}</p>
+                <span (click)="logout()">Logout</span>
+            }@else{
+                <span [routerLink]="'/login'">Login</span>
+                <span [routerLink]="'/signup'">Sign Up</span>
+            } 
+            
+          
+        </div>
     </div>
 </div>
