@@ -1,22 +1,217 @@
 <div class="outer-container">
   <app-hometop-navbar></app-hometop-navbar>
 </div>
-
-  <section class="trendy-products">
-    <h2>Trendy Products</h2>
-    <div class="product-list">
-      <div class="product-item">
-        @for (product of trendingProducts;track product.id){
-        <img [src]="product.image" alt="{{product.name}}">
-        <div class="product-details">
-          <h3>{{product.title}}</h3>
-          <p>Price: {{product.price}}</p>
-          <a>View Details</a>
-          <button >Add to Cart</button>
+  <div class="container">
+    <div class="items">
+      <div class="top">
+        <div class="left">Top Mobiles</div>
+        <div class="right">Next</div>
+      </div>
+      <div class="bottom">
+        <div class="item">
+          <div class="image">
+            <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="" (click)="showProduct()">
+          </div>
+          <div class="title">
+            <span>IPhone</span>
+          </div>
+          <div class="price">
+            <span>56000</span>
+          </div>
         </div>
-      }
+        <div class="item">
+          <div class="image">
+            <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+          </div>
+          <div class="title">
+            <span>IPhone</span>
+          </div>
+          <div class="price">
+            <span>56000</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+          </div>
+          <div class="title">
+            <span>IPhone</span>
+          </div>
+          <div class="price">
+            <span>56000</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+          </div>
+          <div class="title">
+            <span>IPhone</span>
+          </div>
+          <div class="price">
+            <span>56000</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+          </div>
+          <div class="title">
+            <span>IPhone</span>
+          </div>
+          <div class="price">
+            <span>56000</span>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+    <div class="items">
+      <div class="add-images">
+        <img src="https://i.pinimg.com/originals/d3/30/3e/d3303ee4a207bda571474988521d81a6.png" alt="">
+        <img src="https://i.pinimg.com/originals/d3/30/3e/d3303ee4a207bda571474988521d81a6.png" alt="">
+        <img src="https://i.pinimg.com/originals/d3/30/3e/d3303ee4a207bda571474988521d81a6.png" alt="">
+      </div>
+    </div>
+    <div class="items">
+      <div class="top">
+        <div class="left">Top Mobiles</div>
+        <div class="right">Next</div>
+      </div>
+      <div class="bottom">
+        <div class="item">
+          <div class="image">
+            <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+          </div>
+          <div class="title">
+            <span>IPhone</span>
+          </div>
+          <div class="price">
+            <span>56000</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+          </div>
+          <div class="title">
+            <span>IPhone</span>
+          </div>
+          <div class="price">
+            <span>56000</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+          </div>
+          <div class="title">
+            <span>IPhone</span>
+          </div>
+          <div class="price">
+            <span>56000</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+          </div>
+          <div class="title">
+            <span>IPhone</span>
+          </div>
+          <div class="price">
+            <span>56000</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+          </div>
+          <div class="title">
+            <span>IPhone</span>
+          </div>
+          <div class="price">
+            <span>56000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="items">
+      <div class="add-images">
+        <img src="https://i.pinimg.com/originals/d3/30/3e/d3303ee4a207bda571474988521d81a6.png" alt="">
+        <img src="https://i.pinimg.com/originals/d3/30/3e/d3303ee4a207bda571474988521d81a6.png" alt="">
+        <img src="https://i.pinimg.com/originals/d3/30/3e/d3303ee4a207bda571474988521d81a6.png" alt="">
+      </div>
+    </div>
+    <div class="items">
+      <div class="top">
+        <div class="left">Top Mobiles</div>
+        <div class="right">Next</div>
+      </div>
+      <div class="bottom">
+        <div class="item">
+          <div class="image">
+            <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+          </div>
+          <div class="title">
+            <span>IPhone</span>
+          </div>
+          <div class="price">
+            <span>56000</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+          </div>
+          <div class="title">
+            <span>IPhone</span>
+          </div>
+          <div class="price">
+            <span>56000</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+          </div>
+          <div class="title">
+            <span>IPhone</span>
+          </div>
+          <div class="price">
+            <span>56000</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+          </div>
+          <div class="title">
+            <span>IPhone</span>
+          </div>
+          <div class="price">
+            <span>56000</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+          </div>
+          <div class="title">
+            <span>IPhone</span>
+          </div>
+          <div class="price">
+            <span>56000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="items">
+      <div class="add-images">
+        <img src="https://i.pinimg.com/originals/d3/30/3e/d3303ee4a207bda571474988521d81a6.png" alt="">
+        <img src="https://i.pinimg.com/originals/d3/30/3e/d3303ee4a207bda571474988521d81a6.png" alt="">
+        <img src="https://i.pinimg.com/originals/d3/30/3e/d3303ee4a207bda571474988521d81a6.png" alt="">
+      </div>
+    </div>
+  </div>
 
-<!-- (click)="addToCart(product.id)" -->
+

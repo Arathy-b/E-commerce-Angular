@@ -33,6 +33,8 @@ export class LoginComponent {
   
 
 onsubmit(){
+  console.log("ion");
+  
   this.submitted=true;
 
   if(this.loginForm.invalid)

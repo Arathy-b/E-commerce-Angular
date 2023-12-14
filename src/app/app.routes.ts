@@ -7,6 +7,7 @@ import { AddProductComponent } from './pages/add-product/add-product.component';
 import { UpdateProductComponent } from './pages/update-product/update-product.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { HometopNavbarComponent } from './pages/hometop-navbar/hometop-navbar.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 export const routes: Routes = [
     {
@@ -44,5 +45,10 @@ export const routes: Routes = [
         path:"hometopnavbar",
         component:HometopNavbarComponent,
         title:"HomeTopNavbar | E-Commerce Website"
+    },
+    {
+        path:"cart",
+        component:CartComponent,
+        title:"cart | E-Commerce Website"
     }
 ];

@@ -1,33 +1,49 @@
-<!-- <div class="row product-details" >
-    
-@if(productData){
-    <div class="col-sm-6">
-    <img  class="product-img" src="{{productData.image}}" alt="">
-    </div>
-     <div class="col-sm-6">
-        <div class="details">
-            <h1>{{productData.title}}</h1>
-            <h3>Price : {{productData.price}}</h3>
-            <h3>quantity : {{productData.quantity}}</h3>
-            <h6>Category : {{productData.category}}</h6>
-            <h6>Description : {{productData.description}}</h6>
-            <button class="form-button">Buy Now</button>
-
-            @if(removeCart){
-                <button class="form-button" (click)=" removeToCart(productData.id)">Remove to Cart</button>
-            }@else{
-                <button  class="form-button" (click)="addToCart()">Add to Cart</button>
-
-            }
-           
-           
-            <div class="quantity-group">
-                <button (click)="handleQuantity('min')" >-</button>
-                <input type="text" value="{{productQuantity}}" />
-                <button (click)="handleQuantity('plus')">+</button>
-    
+<div class="product-details" >
+    <div class="container">
+        <div class="box1">
+            <div class="top">
+                <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+                  
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <button  class="form-button" (click)="addToCart()">Add to Cart</button>
+                </div>
+                <div class="right">
+                    <button  class="form-button" (click)="buyNow()">Buy Now</button>
+                </div>
             </div>
         </div>
+        <div class="box2">
+            <div class="details">
+               <div class="title"><h1>Iphone 13 pro</h1></div>
+               <div class="price"><h3>56000</h3></div>
+               <div class="quantity"><h4>200</h4></div>
+               <div class="Category"><h5>Electronics</h5></div>
+               <div class="description"><h5>Product Description</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sint ab quos temporibus ex magnam blanditiis asperiores ea explicabo cumque perspiciatis nulla consequatur sequi ipsam, aperiam repellendus omnis quidem sit.</p></div>
+            <button  class="form-button" (click)="buyNow()">Add to Cart</button>    
+        </div>
+        </div>
+       
     </div>
-}
-    </div>   -->
+    <div class="footer">
+        <h2>Similar Products</h2>
+        <div class="end"></div>
+        
+        <div class="item">
+            <div class="image">
+              <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="" (click)="showProduct()">
+            </div>
+            <div class="title">
+              <span>IPhone</span>
+            </div>
+            <div class="price">
+              <span>56000</span>
+            </div>
+          </div>
+    </div>
+</div>
+    
+
+ 

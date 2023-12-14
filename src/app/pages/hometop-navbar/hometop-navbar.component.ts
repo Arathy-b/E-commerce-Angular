@@ -13,6 +13,7 @@ import { DataserviceService } from '../../dataservice.service';
 export class HometopNavbarComponent implements OnInit{
   constructor(private ds:DataserviceService){}
   ngOnInit(): void {
+    
   }
 
   viewComponent(comp:any){
