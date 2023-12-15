@@ -33,7 +33,7 @@ export class LoginComponent {
   
 
 onsubmit(){
-  console.log("ion");
+  
   
   this.submitted=true;
 

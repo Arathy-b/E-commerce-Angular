@@ -27,15 +27,29 @@
 
 .box2{
     flex: 1;
-    padding: 20px;
+    padding-left: 20px;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
     
 }
-h5{
-    text-align: center;
+h1{
+    color: rgb(69, 126, 143);
+    
 }
+button{
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    // background-color: #fff;
+    cursor: pointer;
+    margin: 10px 0;
+    color: rgb(242, 238, 247);
+    background-color:orangered;
+    font-size: small;
+    text-transform: uppercase;
+
+}
+
 .bottom{
     display: flex;
     justify-content: left;
@@ -46,12 +60,6 @@ h5{
     color: rgb(41, 154, 158);
     font-family: 'Courier New', Courier, monospace;
   
-}
-button{
-    color: rgb(104, 20, 184);
-    background-color: rgb(230, 220, 213);
-    text-transform: uppercase;
-
 }
 .end{
     width: 95%;

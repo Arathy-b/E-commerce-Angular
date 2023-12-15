@@ -1,0 +1,26 @@
+<div class="order-confirmation-container">
+    <h2>Thank you for your order!</h2>
+    <p>Your order number is <strong>#123456</strong>. You will receive an order confirmation email shortly with the details of your purchase.</p>
+    
+    <div class="address-form">
+        <h3>Shipping Address</h3>
+        <form [formGroup]="checkoutForm"  action="#" method="post" class="form-box" (ngSubmit)="onsubmit()">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required>
+            
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+            
+            <label for="state">State</label>
+            <input type="text" id="state" name="state" required>
+    
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" required>
+
+            <label for="pin">Pin Code</label>
+            <input type="text" id="pin" name="pin" required>
+
+            <button type="submit">Confirm Address</button>
+        </form>
+    </div>
+</div>

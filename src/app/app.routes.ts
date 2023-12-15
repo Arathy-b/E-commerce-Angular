@@ -8,6 +8,8 @@ import { UpdateProductComponent } from './pages/update-product/update-product.co
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { HometopNavbarComponent } from './pages/hometop-navbar/hometop-navbar.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 export const routes: Routes = [
     {
@@ -42,6 +44,11 @@ export const routes: Routes = [
         title:"UpdateProduct | E-Commerce Website"
     },
     {
+        path:"products",
+        component:ProductsComponent,
+        title:"products | E-Commerce Website"
+    },
+    {
         path:"hometopnavbar",
         component:HometopNavbarComponent,
         title:"HomeTopNavbar | E-Commerce Website"
@@ -50,5 +57,10 @@ export const routes: Routes = [
         path:"cart",
         component:CartComponent,
         title:"cart | E-Commerce Website"
+    },
+    {
+        path:"checkout",
+        component:CheckoutComponent,
+        title:"checkout | E-Commerce Website"
     }
 ];

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../models/data-types';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Route, Router, RouterModule } from '@angular/router';
 import { ApiserviceService } from '../../apiservice.service';
-import { Router } from 'express';
+
 
 @Component({
   selector: 'app-product-details',
@@ -17,7 +17,7 @@ export class ProductDetailsComponent {
   productQuantity:number=1;
   // removeCart=false;
   // cartData:product|undefined;
-  constructor(private activeRoute:ActivatedRoute, private api:ApiserviceService,private router:Router) { }
+  constructor(private activeRoute:ActivatedRoute) { }
   addToCart(){
 
   }
