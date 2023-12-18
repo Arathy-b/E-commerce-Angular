@@ -1,37 +1,16 @@
 <div class="product-container">
     <div class="items">
-        <div class="item">
-            <div class="left">
-                <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+        @for (prod of products; track $index) {
+            <div class="item" (click)="showDetails(prod.id)">
+                <div class="left">
+                    <img [src]="'http://localhost:8084/image/view/'+prod.id+'/'+prod.image" alt="">
+                </div>
+                <div class="product-details">
+                    <span class="title">{{prod.title}}</span>
+                    <span class="product-price">{{prod.price}}</span>
+                    <span class="description">{{prod.description}}</span>                   
+                </div>
             </div>
-            <div class="product-details">
-                <span class="title">Iphone 13 pro</span>
-                <span class="product-price">56000</span>
-                <span class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae velit fuga illum eligendi? Fuga quis, aliquid, veritatis cumque quas illum quidem ad accusantium eum et veniam magni molestias voluptates deserunt.</span>
-               
-            </div>
-        </div>
-        <div class="item">
-            <div class="left">
-                <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
-            </div>
-            <div class="product-details">
-                <span class="title">Iphone 13 pro</span>
-                <span class="product-price">56000</span>
-                <span class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae velit fuga illum eligendi? Fuga quis, aliquid, veritatis cumque quas illum quidem ad accusantium eum et veniam magni molestias voluptates deserunt.</span>
-               
-            </div>
-        </div>
-        <div class="item">
-            <div class="left">
-                <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
-            </div>
-            <div class="product-details">
-                <span class="title">Iphone 13 pro</span>
-                <span class="product-price">56000</span>
-                <span class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae velit fuga illum eligendi? Fuga quis, aliquid, veritatis cumque quas illum quidem ad accusantium eum et veniam magni molestias voluptates deserunt.</span>
-               
-            </div>
-        </div>
+        }
     </div>
 </div>

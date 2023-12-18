@@ -1,56 +1,14 @@
 <div class="featuredProducts">
     <div class="featuredProduct-list">
-        
-        <div class="featuredProduct-item">
-            <div class="featuredProduct-image">
-                <img src="../../../assets/category/electronics.webp" alt="" srcset="">
+        @for (cat of catList; track cat.id) {
+            <div class="featuredProduct-item" (click)="showCatProducts(cat.id)">
+                <div class="featuredProduct-image">
+                    <img [src]="'../../../assets/category/'+cat.name+'.webp'" alt="" srcset="">
+                </div>
+                <p class="featuredProduct-name">
+                    {{cat.name}}
+                </p>
             </div>
-            <p class="featuredProduct-name">
-                Electronics
-            </p>
-        </div>
-        <div class="featuredProduct-item">
-            <div class="featuredProduct-image">
-                <img src="../../../assets/category/fashion.webp" alt="" srcset="">
-            </div>
-            <p class="featuredProduct-name">
-               Fashion
-            </p>
-        </div>
-       
-        <div class="featuredProduct-item">
-            <div class="featuredProduct-image">
-                <img src="../../../assets/category/home&furnitures.webp" alt="" srcset="">
-            </div>
-            <p class="featuredProduct-name">
-                Home & furnitures
-            </p>
-        </div>
-        <div class="beauty">
-            <div class="kitchen-image">
-                <img src="../../../assets/category/beauty.webp" alt="" srcset="">
-            </div>
-            <p class="featuredProduct-name">
-                Beauty
-            </p>
-        </div>
-        <div class="featuredProduct-item">
-            <div class="featuredProduct-image">
-                <img src="../../../assets/category/Mobiles.webp" alt="" srcset="">
-            </div>
-            <p class="featuredProduct-name">
-                Mobiles
-            </p>
-        </div>
-        <div class="kitchen">
-            <div class="kitchen-image">
-                <img src="../../../assets/category/kitchen.webp" alt="" srcset="">
-            </div>
-            <p class="featuredProduct-name">
-                kitchen
-            </p>
-        </div>
-
-
+        }
     </div>
 </div>

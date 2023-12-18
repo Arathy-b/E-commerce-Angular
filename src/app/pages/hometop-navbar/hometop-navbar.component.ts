@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { DataserviceService } from '../../dataservice.service';
 
 @Component({
@@ -11,9 +11,14 @@ import { DataserviceService } from '../../dataservice.service';
   styleUrl: './hometop-navbar.component.scss'
 })
 export class HometopNavbarComponent implements OnInit{
-  constructor(private ds:DataserviceService){}
+  @Input() catList:any[]=[]
+
+  constructor(private ds:DataserviceService,private router:Router){}
   ngOnInit(): void {
     
+  }
+  showCatProducts(catId:number){
+    this.router.navigate([`products/${catId}`])
   }
 
   viewComponent(comp:any){

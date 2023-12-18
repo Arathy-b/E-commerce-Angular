@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Product } from '../../models/data-types';
-import { ActivatedRoute, Route, Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ApiserviceService } from '../../apiservice.service';
+import { HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -12,19 +12,30 @@ import { ApiserviceService } from '../../apiservice.service';
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss'
 })
-export class ProductDetailsComponent {
-  productData:undefined | Product;
+export class ProductDetailsComponent implements OnInit{
+  prodId:number|any
+  productDetails:any
   productQuantity:number=1;
-  // removeCart=false;
-  // cartData:product|undefined;
-  constructor(private activeRoute:ActivatedRoute) { }
+  constructor(private activeRoute:ActivatedRoute,private api:ApiserviceService,private router:Router) { }
+
+  ngOnInit(): void {
+    this.activeRoute.params.subscribe(s => {
+      this.prodId=s["productId"]
+    });
+    this.getProductDetails()
+  }
+  getProductDetails(){
+    this.api.getReturn(`http://localhost:8084/products/View/${this.prodId}`).subscribe((data:any)=>{
+      this.productDetails=data
+    },(error)=>console.log(error))
+  }
   addToCart(){
-
+    const headers = new HttpHeaders().set("ResponseType","text")
+    this.api.postReturn(`http://localhost:8084/products/addProductToCart/${this.prodId}`,null,{headers}).subscribe((data:any)=>{
+      if(data=="successfull"){
+        this.router.navigate(['cart'])
+      }
+    },(error)=>console.log(error))
+    
   }
-  buyNow(){}
-  showProduct(){
-    // this.router.navigate(['/cart'])
-
-  }
-
 }

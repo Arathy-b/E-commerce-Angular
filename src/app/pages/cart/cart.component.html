@@ -8,24 +8,12 @@
         <span class="remove"></span>
     </div>
     <div class="cart-items">
-        <div class="cart-row">
-            <span class="product">
-                <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="Item" class="cart-item-image">
-                <span class="cart-item-title">Product Name</span>
-            </span>
-            <span class="price">56000</span>
-            <span class="quantity">
-                <input type="number" value="1" class="cart-quantity-input">
-            </span>
-            <span class="subtotal">56000</span>
-            <button class="remove">remove</button>
-        </div>
-     
-
-        
+        @for (item of cartProducts; track $index) {
+            <app-cart-product [productDetails]="item" (removeEvent)="onRemoveEvent($event)"></app-cart-product>>
+        }
     </div>
     <div class="cart-summary">
-        <button class="btn btn-continue">Continue Shopping</button>
+        <button class="btn btn-continue" [routerLink]="'/home'">Continue Shopping</button>
         <div class="summary-total">
             <span>Total:</span>
             <span class="total-price">56000</span>

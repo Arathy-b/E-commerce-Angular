@@ -2,48 +2,34 @@
     <div class="container">
         <div class="box1">
             <div class="top">
-                <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="">
+                <img [src]="'http://localhost:8084/image/view/'+productDetails.id+'/'+productDetails.image" alt="">
                   
             </div>
             <div class="bottom">
                 <div class="left">
-                    <button  class="form-button" (click)="addToCart()">Add to Cart</button>
+                    <button  class="form-button">Add to Cart</button>
                 </div>
                 <div class="right">
-                    <button  class="form-button" (click)="buyNow()">Buy Now</button>
+                    <button  class="form-button">Buy Now</button>
                 </div>
             </div>
         </div>
         <div class="box2">
             <div class="details">
-               <div class="title"><h1>Iphone 13 pro</h1></div>
-               <div class="price"><h3>56000</h3></div>
-               <div class="quantity"><h4>200</h4></div>
-               <div class="Category"><h5>Electronics</h5></div>
-               <div class="description"><h5>Product Description</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sint ab quos temporibus ex magnam blanditiis asperiores ea explicabo cumque perspiciatis nulla consequatur sequi ipsam, aperiam repellendus omnis quidem sit.</p></div>
-            <button  class="form-button" (click)="buyNow()">Add to Cart</button>    
+               <div class="title"><h1>{{productDetails.title}}</h1></div>
+               <div class="price"><h3>{{productDetails.price}}</h3></div>
+               <div class="quantity"><h4>{{productDetails.quantity}}</h4></div>
+               <div class="Category"><h5>{{productDetails.category.name}}</h5></div>
+               <div class="description">
+                    <h5>Product Description</h5>
+                    <p>{{productDetails.description}}</p>
+                </div>
+                <button  class="form-button" (click)="addToCart()">Add to Cart</button>    
+            </div>
         </div>
-        </div>
-       
-    </div>
-    <div class="footer">
-        <h2>Similar Products</h2>
-        <div class="end"></div>
-        
-        <div class="item">
-            <div class="image">
-              <img src="https://media.ldlc.com/ld/products/00/05/88/62/LD0005886202_1.jpg" alt="" (click)="showProduct()">
-            </div>
-            <div class="title">
-              <span>IPhone</span>
-            </div>
-            <div class="price">
-              <span>56000</span>
-            </div>
-          </div>
     </div>
 </div>
     
+
 
  

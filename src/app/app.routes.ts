@@ -15,8 +15,7 @@ export const routes: Routes = [
     {
         path:"login",
         component:LoginComponent,
-        title:"Login | E-Commerce Website",
-        canActivate:[customerguardGuard]
+        title:"Login | E-Commerce Website"
     },
     {
         path:"signup",
@@ -26,12 +25,14 @@ export const routes: Routes = [
     {
         path:"home",
         component:HomeComponent,
-        title:"Home | E-Commerce Website"
+        title:"Home | E-Commerce Website",
+        canActivate:[customerguardGuard]
     },
     {
-        path:"productdetails",
+        path:"productdetails/:productId",
         component:ProductDetailsComponent,
-        title:"ProductDetails| E-Commerce Website"
+        title:"ProductDetails| E-Commerce Website",
+        canActivate:[customerguardGuard]
     },
     {
         path:"addproduct",
@@ -44,23 +45,21 @@ export const routes: Routes = [
         title:"UpdateProduct | E-Commerce Website"
     },
     {
-        path:"products",
+        path:"products/:catId",
         component:ProductsComponent,
-        title:"products | E-Commerce Website"
-    },
-    {
-        path:"hometopnavbar",
-        component:HometopNavbarComponent,
-        title:"HomeTopNavbar | E-Commerce Website"
+        title:"products | E-Commerce Website",
+        canActivate:[customerguardGuard]
     },
     {
         path:"cart",
         component:CartComponent,
-        title:"cart | E-Commerce Website"
+        title:"cart | E-Commerce Website",
+        canActivate:[customerguardGuard]
     },
     {
         path:"checkout",
         component:CheckoutComponent,
-        title:"checkout | E-Commerce Website"
+        title:"checkout | E-Commerce Website",
+        canActivate:[customerguardGuard]
     }
 ];

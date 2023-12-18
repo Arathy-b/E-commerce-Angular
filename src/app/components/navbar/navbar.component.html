@@ -11,6 +11,9 @@
         <div class="item">
             @if(username){
                 <p>{{username}}</p>
+                <span class="material-symbols-outlined" [routerLink]="'/cart'">
+                    shopping_cart
+                    </span>
                 <span (click)="logout()">Logout</span>
             }@else{
                 <span [routerLink]="'/login'">Login</span>
