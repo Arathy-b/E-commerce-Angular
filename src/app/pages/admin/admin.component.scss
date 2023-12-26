@@ -1,0 +1,13 @@
+.container{
+    height:100%;
+    display: flex;
+
+}
+app-sidebar{
+    width: 20%;
+    display: flex;
+}
+app-admin-view-area{
+    width: 80%;
+    display: flex;
+}

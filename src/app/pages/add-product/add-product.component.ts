@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Product } from '../../models/data-types';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ApiserviceService } from '../../apiservice.service';
-import { environment } from '../../../environments/environment.development';
 import { HttpHeaders } from '@angular/common/http';
 import { error } from 'node:console';
+import { ApiserviceService } from '../../apiservice.service';
+import { Product } from '../../models/data-types';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-add-product',
@@ -31,9 +31,7 @@ export class AddProductComponent {
     })
     
   }
-
   submit(){
-
 
   if(this.addProduct.invalid)
   {
@@ -58,10 +56,11 @@ console.log(formData.get('imageFile'));
       const headers = new HttpHeaders().set('ResponseType','text')   
       this.api.postReturn(`${environment.BASE_API_URL}/admin/uploadImage/${data.id}`,formData,{headers}).subscribe((data)=>{
         console.log("product successfully created");
-      },(error)=>{
+        const confirmation=confirm('Product added succesfully')
+      },(error: any)=>{
         console.log(error);
       })
-    },(error)=>{
+    },(error: any)=>{
       console.log(error);
     })
     }

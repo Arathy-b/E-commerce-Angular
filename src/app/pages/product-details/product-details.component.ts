@@ -14,6 +14,8 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class ProductDetailsComponent implements OnInit{
   prodId:number|any
+  catId:number|any
+  products:any[]=[]
   productDetails:any
   productQuantity:number=1;
   constructor(private activeRoute:ActivatedRoute,private api:ApiserviceService,private router:Router) { }
@@ -23,6 +25,7 @@ export class ProductDetailsComponent implements OnInit{
       this.prodId=s["productId"]
     });
     this.getProductDetails()
+    this.getProductsByCat()
   }
   getProductDetails(){
     this.api.getReturn(`http://localhost:8084/products/View/${this.prodId}`).subscribe((data:any)=>{
@@ -38,4 +41,24 @@ export class ProductDetailsComponent implements OnInit{
     },(error)=>console.log(error))
     
   }
-}
+  buyNow(){
+    
+        this.router.navigate(['checkout'])
+      }
+   
+    
+    getProductsByCat(){
+      this.api.getReturn(`http://localhost:8084/products/category/${this.catId}`).subscribe((data:any)=>{
+        this.products=data
+      },(error)=>console.log(error))
+    }
+     showDetails(prodId:any){
+      this.router.navigate([`productdetails/${prodId}`])
+  }
+
+     }
+  
+
+  
+
+

@@ -1,0 +1,25 @@
+<div class="container">
+    
+    <button (click)="onAddCategory()" class="addcat" [routerLink]="'/addcategory'">Add Category</button>
+    <ul class="cat-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                @for (item of catData; track $index) {
+                    <tr>
+                        <td>{{item.name}}</td>
+                    </tr>
+                }
+            </tbody>   
+        </table>
+
+    </ul>
+
+
+</div>
+

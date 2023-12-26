@@ -1,0 +1,41 @@
+<div class="container">
+    <button (click)="onAddProduct()" class="addProduct" [routerLink]="'/addproduct'">Add product
+    </button>
+    <ul class="product-list">
+
+        <table>
+            <thead>
+                <tr>
+                  <th>Title</th>
+                  <th> Price</th>
+                  <th>Quantity</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+            <tbody>
+           
+              @for (item of productData; track $index) {
+                <tr>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button (click)="onUpdateProduct()" class="update-button">Update</button>
+                            <button (click)="onDeleteProduct(item.id)" class="delete-button">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+
+              
+              
+    
+        } 
+    </tbody>
+          
+          </table>
+        
+    </ul>
+
+   
+</div>

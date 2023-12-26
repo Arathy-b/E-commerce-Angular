@@ -6,29 +6,37 @@
       <div class="items">
         <div class="top">
           <div class="left">Top {{item[0]}}</div>
-          <div class="right">Next</div>
+          
         </div>
         <div class="bottom">
-          @for (product of item[1];track product.id) {
-            <div class="item" (click)="showProduct(product.id)">
-              <div class="image">
-                <img [src]="'http://localhost:8084/image/view/'+product.id+'/'+product.image" alt="">
+          <div class="scroll-container">
+            @for (product of item[1];track product.id) {
+              <div class="item" (click)="showProduct(product.id)">
+                <div class="image">
+                  <img [src]="'http://localhost:8084/image/view/'+product.id+'/'+product.image" alt="">
+                </div>
+                <div class="title">
+                  <span>{{product.title}}</span>
+                </div>
+                <div class="price">
+                  <span>{{product.price}}</span>
+                </div>
               </div>
-              <div class="title">
-                <span>{{product.title}}</span>
-              </div>
-              <div class="price">
-                <span>{{product.price}}</span>
-              </div>
-            </div>
-          }
+            }
+          </div>
         </div>
       </div>
       <div class="items">
         <div class="add-images">
-          <img src="https://i.pinimg.com/originals/d3/30/3e/d3303ee4a207bda571474988521d81a6.png" alt="">
-          <img src="https://i.pinimg.com/originals/d3/30/3e/d3303ee4a207bda571474988521d81a6.png" alt="">
-          <img src="https://i.pinimg.com/originals/d3/30/3e/d3303ee4a207bda571474988521d81a6.png" alt="">
+         <a href="https://www.shoppersstop.com/">
+           <img src="https://sslimages.shoppersstop.com/sys-master/root/h37/h06/31576965316638/private-brands%29top-banner-web_Eoss-23.jpg" alt="">
+          </a>
+          <a href="https://www.goibibo.com/flights/">
+           <img src="https://rukminim2.flixcart.com/fk-p-flap/844/140/image/352e6f0f8034fab5.jpg?q=50" alt="">
+         </a>
+         <a href="https://www.blogger.com/about/?bpli=1">
+           <img src="https://th.bing.com/th/id/R.0b786273df3f0c0dafd3448f450ed6ea?rik=8Ee323OXbROwQQ&pid=ImgRaw&r=0" alt="">
+         </a>
         </div>
       </div>
     }

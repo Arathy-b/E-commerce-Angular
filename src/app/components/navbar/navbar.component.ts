@@ -16,7 +16,14 @@ export class NavbarComponent implements OnInit{
   customer:any
   username:any
   constructor(private api:ApiserviceService,private router:Router){}
+
+  users: any[] = [];
+
+
   ngOnInit(): void {
+
+
+    
     this.router.events.subscribe((value:any)=>{
       if(value.url){
         if(typeof localStorage!=="undefined" && localStorage.getItem("customer")){      
@@ -28,6 +35,10 @@ export class NavbarComponent implements OnInit{
       }
     })
   }
+
+   
+
+
   logout(){
     this.api.getReturn(`${environment.BASE_API_URL}/auth/logout`).subscribe((data)=>{
       localStorage.removeItem("customer")

@@ -7,3 +7,6 @@ export interface Product {
     category_id:number
 
 }
+export interface Category{
+    name:string;
+}

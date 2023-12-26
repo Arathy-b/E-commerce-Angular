@@ -90,3 +90,22 @@ button{
     width: 200px;
     height: 300px;
   }
+  .similarproducts{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+  }
+  .product-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .product-item {
+    width: 30%; 
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+  }

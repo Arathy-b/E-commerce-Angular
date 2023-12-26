@@ -10,7 +10,7 @@
         </div>
         <div class="item">
             @if(username){
-                <p>{{username}}</p>
+                <p [routerLink]="'/profile'">{{username}} </p>
                 <span class="material-symbols-outlined" [routerLink]="'/cart'">
                     shopping_cart
                     </span>

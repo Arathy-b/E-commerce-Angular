@@ -1,0 +1,32 @@
+
+.container{
+    height: 100%;
+
+}.sidebar {
+    width: 200%; 
+    height: 100%;
+    background-color: #f7fcff;
+  }
+  .items{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+    align-items: center;
+  }
+  .button{
+    display: flex;
+    column-gap: 20px; 
+   
+   height: 200px;
+   margin: (10,10,10,10);
+  }
+  li{
+    cursor: pointer;
+    gap: 10px;
+  }

@@ -3,13 +3,16 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import { customerguardGuard } from './guards/customerguard.guard';
-import { AddProductComponent } from './pages/add-product/add-product.component';
-import { UpdateProductComponent } from './pages/update-product/update-product.component';
+
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { HometopNavbarComponent } from './pages/hometop-navbar/hometop-navbar.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { AddProductComponent } from './pages/add-product/add-product.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { AddcategoryComponent } from './pages/admin/addcategory/addcategory.component';
 
 export const routes: Routes = [
     {
@@ -34,17 +37,19 @@ export const routes: Routes = [
         title:"ProductDetails| E-Commerce Website",
         canActivate:[customerguardGuard]
     },
-    {
+     {
         path:"addproduct",
-        component:AddProductComponent,
+         component:AddProductComponent,
         title:"AddProduct | E-Commerce Website"
-    },
-    {
-        path:"updateproduct",
-        component:UpdateProductComponent,
-        title:"UpdateProduct | E-Commerce Website"
-    },
-    {
+     },
+  
+     {
+        path:"addcategory",
+         component:AddcategoryComponent,
+        title:"AddCategory | E-Commerce Website"
+     },
+  
+     {
         path:"products/:catId",
         component:ProductsComponent,
         title:"products | E-Commerce Website",
@@ -61,5 +66,18 @@ export const routes: Routes = [
         component:CheckoutComponent,
         title:"checkout | E-Commerce Website",
         canActivate:[customerguardGuard]
+    },
+    {
+        path:"admin",
+        component:AdminComponent,
+        title:"admin | E-Commerce Website",
+    },
+    {
+        path:"profile",
+        component:ProfileComponent,
+        title:"profile | E-Commerce Website",
     }
+    
+    
+
 ];

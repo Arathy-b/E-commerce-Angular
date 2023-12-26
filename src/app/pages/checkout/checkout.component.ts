@@ -27,14 +27,8 @@ export class CheckoutComponent {
   }
 
   onsubmit(){
-    if(this.checkoutForm.invalid)
-  {
-    this.checkoutForm.markAllAsTouched();
-    return;
-    }
-
+ 
     const formValues=this.checkoutForm.getRawValue();
-    console.log(this.checkoutForm);
     const data={
       address:formValues.address,
       city:formValues.city,
@@ -42,10 +36,10 @@ export class CheckoutComponent {
       country:formValues.country,
       pin:formValues.pin
     }
-    // console.log(data);
-    // this.http.postReturn("http://localhost:8084/api/orders/placeOrder").subscribe((data:any)=>{
+    console.log(data);
+    this.http.putReturn("http://localhost:8084/api/orders/placeOrder",data).subscribe((data:any)=>{
 
-    // })
+    })
     
 
   }
