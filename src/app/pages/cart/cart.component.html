@@ -9,13 +9,13 @@
     </div>
     <div class="cart-items">
         @for (item of cartProducts; track $index) {
-            <app-cart-product [productDetails]="item" (removeEvent)="onRemoveEvent($event)"></app-cart-product>>
+            <app-cart-product [productDetails]="item" (removeEvent)="onRemoveEvent($event)" (plusTotal)="onPlusTotal($event)" (minusTotal)="onMinusTotal($event)"></app-cart-product>
         }
     </div>
     <div class="cart-summary">
         <button class="btn btn-continue" [routerLink]="'/home'">Continue Shopping</button>
         <div class="summary-total">
-            <span>Total:</span>
+            <span>Total: {{totalPrice}}</span>
             <span class="total-price"></span>
         </div>
         <button class="btn btn-checkout"  [routerLink]="'/checkout'">Place order</button>

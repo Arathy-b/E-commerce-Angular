@@ -13,6 +13,8 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { AddProductComponent } from './pages/add-product/add-product.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AddcategoryComponent } from './pages/admin/addcategory/addcategory.component';
+import { PaymentComponent } from './pages/payment/payment.component';
+import { UpdateProductComponent } from './pages/admin/update-product/update-product.component';
 
 export const routes: Routes = [
     {
@@ -48,6 +50,11 @@ export const routes: Routes = [
          component:AddcategoryComponent,
         title:"AddCategory | E-Commerce Website"
      },
+     {
+        path:"updateproduct/:productId",
+         component:UpdateProductComponent,
+        title:"UpdateProduct | E-Commerce Website"
+     },
   
      {
         path:"products/:catId",
@@ -76,6 +83,12 @@ export const routes: Routes = [
         path:"profile",
         component:ProfileComponent,
         title:"profile | E-Commerce Website",
+    }
+    ,
+    {
+        path:"payment",
+        component:PaymentComponent,
+        title:"payment | E-Commerce Website",
     }
     
     

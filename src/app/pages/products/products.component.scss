@@ -26,11 +26,13 @@
   .left{
     display: flex;
     flex-direction: row;
-    width: 30%;
+    width: 20%;
 }
 .product-details{
     align-items: start;
+    padding: 0px 20px 0px 20px;
       width: 70%;
+      gap: 10px;
       height: 250px;
     display: flex;
     flex-direction: column;
@@ -47,5 +49,14 @@
     color: #333;
     font-weight: bold;
   }
-  
-  
+  .title{
+    font-weight: bold;
+    padding: 10px 0px 20px 0px;
+    cursor: pointer;
+    font-size: 25px;
+    display: block;
+    align-items: center;
+  }
+  .title-cont :hover{
+    color: rgb(47, 97, 126);
+  }

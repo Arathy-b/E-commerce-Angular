@@ -6,9 +6,10 @@ table {
 
   th {
     background-color: #f2f2f2;
-    border: 1px solid #dddddd;
+    border: 1px solid #bda0a0;
     padding: 8px;
     text-align: left;
+    color: rgb(90, 90, 199);
   }
 
   tr:nth-child(even) {
@@ -17,7 +18,7 @@ table {
   
 
   td {
-    border: 1px solid #dddddd;
+    border: 1px solid #cac0c0;
     padding: 8px;
   }
   
@@ -57,22 +58,33 @@ form {
     font-weight: bold;
   }
  
-  input,
-  button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-  }
+  // input,
+  // button {
+  //   width: 100%;
+  //   padding: 10px;
+  //   margin-top: 5px;
+  //   margin-bottom: 10px;
+  //   box-sizing: border-box;
+  // }
  
   button {
-    background-color: #4caf50;
-    color: white;
+ 
     border: none;
     padding: 10px 15px;
     border-radius: 3px;
-    cursor: pointer;
+ 
+    background-color: rgb(6, 206, 40);
+    color: white;
+    font-weight: bold;
+  
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 2px 2px; 
+    cursor: pointer
+
   }
  
   button:hover {

@@ -21,7 +21,7 @@
                     <td>{{ item.quantity }}</td>
                     <td>
                         <div class="action-buttons">
-                            <button (click)="onUpdateProduct()" class="update-button">Update</button>
+                            <button [routerLink]="'/updateproduct/'+item.id" class="update-button">Update</button>
                             <button (click)="onDeleteProduct(item.id)" class="delete-button">Delete</button>
                         </div>
                     </td>

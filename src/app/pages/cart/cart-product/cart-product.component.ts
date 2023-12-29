@@ -15,10 +15,14 @@ export class CartProductComponent implements OnInit{
   @Input() productDetails:any
   @ViewChild("quantity") quantity!:ElementRef
   @Output() removeEvent = new EventEmitter<any>()
+  @Output() plusTotal = new EventEmitter<any>()
+  @Output() minusTotal = new EventEmitter<any>()
   qnty:string =""
   subTotal:any
+  totalPrice:any
+  
   ngOnInit(): void {
-    this.subTotal = this.productDetails.price
+    this.subTotal = this.productDetails.price * this.productDetails.quantity
     
   }
   onMinus(){
@@ -27,20 +31,38 @@ export class CartProductComponent implements OnInit{
       y--
       this.quantity.nativeElement.innerText = y.toString()
       this.subTotal = this.productDetails.price * y
+      this.minusTotal.emit(this.productDetails.price)
     }
+    this.updateQuantity(y)
   }
   onPlus(){
     var y: number = +this.quantity.nativeElement.innerText;
     y++
     this.quantity.nativeElement.innerText = y.toString()
     this.subTotal = this.productDetails.price * y
+    this.plusTotal.emit(this.productDetails.price)
+    this.updateQuantity(y)
   }
   removeProduct(){
     const headers = new HttpHeaders().set("ResponseType","text")
     this.api.deleteReturn(`http://localhost:8084/products/delete/${this.productDetails.cartId}/${this.productDetails.id}`,{headers}).subscribe((data:any)=>{
       if(data="successfully"){
-        this.removeEvent.emit("success")
+        this.removeEvent.emit(this.subTotal)
       }
+    },(error)=>{
+      console.log(error);
+      
+    })
+  }
+  updateQuantity(count:number){
+    const reqBody = {
+      cartId:this.productDetails.cartId,
+      productId:this.productDetails.id,
+      newQuantity:count
+    }
+    const headers = new HttpHeaders().set("ResponseType","text")
+    this.api.postReturn(`http://localhost:8084/products/updateQuantity`,reqBody,{headers}).subscribe((data:any)=>{
+      
     },(error)=>{
       console.log(error);
       

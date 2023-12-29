@@ -1,6 +1,7 @@
 <div class="order-confirmation-container">
-    <h2>Thank you for your order!</h2>
-    <p>Your order number is <strong>#123456</strong>. You will receive an order confirmation email shortly with the details of your purchase.</p>
+    <h2>Please enter your address to place this order!</h2>
+
+   
     
     <div class="address-form">
         <h3>Shipping Address</h3>
@@ -20,7 +21,9 @@
             <label for="pin">Pin Code</label>
             <input type="text" id="pin" name="pin" required>
 
-            <button type="submit">Confirm Address</button>
+            <button type="submit" [routerLink]="'/payment'">Place Order</button>
         </form>
     </div>
+   
+
 </div>

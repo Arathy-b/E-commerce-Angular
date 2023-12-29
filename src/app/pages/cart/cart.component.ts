@@ -16,21 +16,32 @@ export class CartComponent implements OnInit{
   
   constructor(private api:ApiserviceService){}
   cartProducts:any[] = []
+  totalPrice:any =0 
   ngOnInit(): void {
     this.getCartDetails()
   }
   getCartDetails(){
     this.api.getReturn(`http://localhost:8084/products/cart`).subscribe((data:any)=>{
       this.cartProducts= data
+      this.totalPrice=0
+      this.cartProducts.map((cartProduct)=>{
+        this.totalPrice = this.totalPrice +  (cartProduct.price * cartProduct.quantity)
+      })
     },(error)=>{
       console.log(error);
       
     })
   }
-  onRemoveEvent(event:any){
-    if(event){
+  onRemoveEvent(value:any){
+    if(value){
       this.getCartDetails()
     }
-
   }
+  onMinusTotal(value:any){
+    this.totalPrice = this.totalPrice - value
+  }
+  onPlusTotal(value:any){
+    this.totalPrice = this.totalPrice + value
+  }
+  
 }

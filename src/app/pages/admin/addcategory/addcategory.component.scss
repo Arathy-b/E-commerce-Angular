@@ -1,10 +1,8 @@
 h3{
-    color:rgb(69, 126, 143);
+    color:orangered;
     text-align: center;
 }
-.add-product{
-    text-align: center;
-}
+
 .form-input{
     display: flex;
     flex-direction: column;
@@ -22,6 +20,20 @@ form{
     align-items:center ;
     width: 100%;
   }
-  button{
-    color: rgb(69, 126, 143);
-  }
+ 
+
+    button{
+      color: rgb(69, 126, 143);
+      background-color: orangered;
+      color: white;
+      font-weight: bold;
+    
+      padding: 10px 20px; 
+      text-align: center; 
+      text-decoration: none; 
+      display: inline-block; 
+      font-size: 16px; 
+      margin: 2px 2px; 
+      cursor: pointer
+      
+    }

@@ -1,0 +1,17 @@
+<div class="add-product">
+    <h1>Update Product</h1>
+        
+    <form [formGroup]="editProductForm" action="#" method="post" class="form-box" >
+
+
+        <input type="text" class="form-input" name="title" formControlName="title"/>
+        <textarea type="text" class="form-input" placeholder="Enter Product Description" name="description"  formControlName="description"
+        ></textarea>
+
+        <input type="text" class="form-input" placeholder="Enter Product Price" name="price" formControlName="price" />
+
+        
+        <button (click)="onUpdateProduct()" class="update-button">Update</button>
+
+    </form>
+</div>

@@ -1,12 +1,12 @@
 <div class="cart-row">
     <span class="product">
-        <img [src]="'http://localhost:8084/image/view/'+productDetails.id+'/'+productDetails.image" alt="" class="cart-item-image">
+        <img [src]="'http://localhost:8084/image/view/'+productDetails?.id+'/'+productDetails?.image" alt="" class="cart-item-image">
         <span class="cart-item-title">{{productDetails.title}}</span>
     </span>
     <span class="price">{{productDetails.price}}</span>
     <span class="quantity">
         <button class="minus"  (click)="onMinus()">-</button>
-        <span class="quantity" #quantity>1</span>
+        <span class="quantity" #quantity>{{productDetails.quantity}}</span>
         <button class="plus" (click)="onPlus()">+</button>
     </span>
     <span class="subtotal">{{subTotal}}</span>

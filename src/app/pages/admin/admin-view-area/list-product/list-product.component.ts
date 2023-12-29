@@ -6,6 +6,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ApiserviceService } from '../../../../apiservice.service';
 import { log } from 'console';
 import { Product } from '../../../../models/data-types';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-list-product',
@@ -19,19 +20,18 @@ export class ListProductComponent implements OnInit{
   reactiveForm:FormGroup | undefined;
   editStatus:any;
   errorMessage: string | undefined;
-  editProductForm:FormGroup | undefined;
+
+
   productData:any[]=[];
 
 
-  productId:any;
-  editProductFormVisible: boolean = false;
   viewProductVisible:boolean=false;
  
  
  
   constructor(  private http:HttpClient,private api:ApiserviceService,
     private router:Router,
-    private route: ActivatedRoute,){}
+    private route: ActivatedRoute,private snackBar:MatSnackBar){}
   ngOnInit(){
     this.api.getReturn(`http://localhost:8084/api/v1/admin/listProducts`).subscribe(
       (data:any) => {
@@ -43,13 +43,7 @@ export class ListProductComponent implements OnInit{
       }
     );
  
-    this.editProductForm = new FormGroup({
-      title: new FormControl(null),
-      description: new FormControl(null),
-      price: new FormControl(null)
 
-   
-    });
  
    
 
@@ -58,12 +52,7 @@ export class ListProductComponent implements OnInit{
 
 
   }
-  onUpdateProduct(){
-    this.editProductFormVisible=true;
-   
 
-   
-  }
   onDeleteProduct(productId:any){
    
     const headers=new HttpHeaders().set("ResponseType","text")
@@ -72,13 +61,10 @@ export class ListProductComponent implements OnInit{
     this.api.deleteReturn(`http://localhost:8084/api/v1/admin/delete/${productId}`,{headers}).subscribe((data:any)=>{
       if(data="Product deleted succesfully")
       console.log(data);
-    const confirmation=confirm('product deleted succesfully')
-      
-
+     
+      let snackBarRef = this.snackBar.open('Product deleted succesfully!!');
     },(error)=>{
       console.error(error);
-      
-
     })
     
 
@@ -87,25 +73,7 @@ export class ListProductComponent implements OnInit{
 }
 
    
-  //   onUpdateProduct(){
-  //     console.log('onUpdateMenu clicked');
 
-  //     this.editProductFormVisible = true;
-  //     this.api.postReturn(`http://localhost:8084/api/v1/admin/update/${this.prodId}`).subscribe(
-  //       (data) => {
-  //         console.log(data);
-   
-  //       }
-  //     );
-  //     console.log(formData);
-   
-  //   }
-   
-  //   onCancelUpdate(){
-  //     this.editProductFormVisible=false;
-  //   }
-   
-   
    
     
 

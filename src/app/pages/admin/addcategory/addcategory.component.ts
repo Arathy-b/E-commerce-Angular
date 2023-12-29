@@ -4,6 +4,7 @@ import { ApiserviceService } from '../../../apiservice.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { HttpHeaders } from '@angular/common/http';
 import { Category } from '../../../models/data-types';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-addcategory',
@@ -14,7 +15,7 @@ import { Category } from '../../../models/data-types';
 })
 export class AddcategoryComponent implements OnInit{
   addCategory: FormGroup|any;
-  constructor(private api:ApiserviceService,private fb:FormBuilder){}
+  constructor(private api:ApiserviceService,private fb:FormBuilder,private snackBar: MatSnackBar){}
 ngOnInit(): void {
   this.addCategory=this.fb.group({
     name:['',[]]
@@ -30,7 +31,8 @@ submit(){
   const headers = new HttpHeaders().set('ResponseType','text')   
   this.api.postReturn(`http://localhost:8084/api/v1/admin/createCategory`,catData,{headers}).subscribe((data:any)=>{   
     console.log("category added succesfully");
-        const confirmation=confirm('category added succesfully')
+    let snackBarRef = this.snackBar.open('Category added succesfully!!');
+        // const confirmation=confirm('category added succesfully')
       },(error: any)=>{
         console.log(error);
       })
