@@ -1,0 +1,35 @@
+<div class="customer-list-container">
+    <h2>Customer List</h2>
+    <table class="customer-list-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+               
+               
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of customers; track $index) {
+           
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.phone_number}}</td>
+             
+                <td>
+                    <button class="view-details">Details</button>
+                 
+                </td>
+            </tr>
+        }
+           
+        </tbody>
+    </table>
+  </div>
+   
+   

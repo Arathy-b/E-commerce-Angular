@@ -15,8 +15,7 @@ export class CartProductComponent implements OnInit{
   @Input() productDetails:any
   @ViewChild("quantity") quantity!:ElementRef
   @Output() removeEvent = new EventEmitter<any>()
-  @Output() plusTotal = new EventEmitter<any>()
-  @Output() minusTotal = new EventEmitter<any>()
+  @Output() updateTotal = new EventEmitter<any>()
   qnty:string =""
   subTotal:any
   totalPrice:any
@@ -31,17 +30,17 @@ export class CartProductComponent implements OnInit{
       y--
       this.quantity.nativeElement.innerText = y.toString()
       this.subTotal = this.productDetails.price * y
-      this.minusTotal.emit(this.productDetails.price)
     }
     this.updateQuantity(y)
+     
   }
   onPlus(){
     var y: number = +this.quantity.nativeElement.innerText;
     y++
     this.quantity.nativeElement.innerText = y.toString()
     this.subTotal = this.productDetails.price * y
-    this.plusTotal.emit(this.productDetails.price)
     this.updateQuantity(y)
+    
   }
   removeProduct(){
     const headers = new HttpHeaders().set("ResponseType","text")
@@ -49,6 +48,7 @@ export class CartProductComponent implements OnInit{
       if(data="successfully"){
         this.removeEvent.emit(this.subTotal)
       }
+      
     },(error)=>{
       console.log(error);
       
@@ -62,10 +62,9 @@ export class CartProductComponent implements OnInit{
     }
     const headers = new HttpHeaders().set("ResponseType","text")
     this.api.postReturn(`http://localhost:8084/products/updateQuantity`,reqBody,{headers}).subscribe((data:any)=>{
-      
+      setTimeout(()=>this.updateTotal.emit(this.productDetails.price))   
     },(error)=>{
-      console.log(error);
-      
+      console.log(error);      
     })
   }
 }

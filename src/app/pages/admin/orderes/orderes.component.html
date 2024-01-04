@@ -1,0 +1,32 @@
+<div class="admin-panel">
+    <h1>Order Management</h1>
+    <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date Placed</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+       
+        <tbody>
+            @for (item of orders; track $index) {
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.order_date}}</td>
+                    <td>{{item.noOfItems}}</td>
+                    <td>{{item.total_price}}</td>
+                    <td>
+                        <button (click)="changeStatus(item.status)">{{item.status}}</button>
+                    </td>     
+                    <td>
+                        <button class="btn delete">Delete</button>
+                    </td>           
+                </tr>
+        }
+        </tbody>
+    </table>
+</div>

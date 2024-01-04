@@ -10,11 +10,13 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { AdminComponent } from './pages/admin/admin.component';
-import { AddProductComponent } from './pages/add-product/add-product.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AddcategoryComponent } from './pages/admin/addcategory/addcategory.component';
-import { PaymentComponent } from './pages/payment/payment.component';
 import { UpdateProductComponent } from './pages/admin/update-product/update-product.component';
+import { OrderesComponent } from './pages/admin/orderes/orderes.component';
+import { CustomersComponent } from './pages/admin/customers/customers.component';
+import { AddProductComponent } from './pages/add-product/add-product.component';
+import { OrderConfirmationComponent } from './pages/order-confirmation/order-confirmation.component';
 
 export const routes: Routes = [
     {
@@ -86,11 +88,21 @@ export const routes: Routes = [
     }
     ,
     {
-        path:"payment",
-        component:PaymentComponent,
-        title:"payment | E-Commerce Website",
+        path:"orders",
+        component:OrderesComponent,
+        title:"orders| E-Commerce Website",
     }
-    
-    
+    ,
+    {
+        path:"customers",
+        component:CustomersComponent,
+        title:"customers| E-Commerce Website",
+    },
+    {
+        path:"orderConfirmation",
+        component:OrderConfirmationComponent,
+        title:"orderConfirmation| E-Commerce Website"
+    }
+   
 
 ];

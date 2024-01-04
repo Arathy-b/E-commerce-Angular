@@ -29,6 +29,14 @@ export class UpdateProductComponent implements OnInit {
   constructor(  private http:HttpClient,private api:ApiserviceService,
     private router:Router,
     private activeRoute: ActivatedRoute,private snackBar: MatSnackBar){}
+
+    openSuccessSnackbar(message: string): void {
+      this.snackBar.open(message, 'Close', {
+        duration: 1000,
+        verticalPosition: 'bottom',
+        panelClass: ['custom-snackbar'],
+      });
+    }
   ngOnInit(): void {
     this.api.getReturn(`http://localhost:8084/products/View/${this.productId}`).subscribe((data:any)=>{
    
@@ -59,7 +67,7 @@ export class UpdateProductComponent implements OnInit {
     this.api.putReturn(`http://localhost:8084/api/v1/admin/update/${this.productId}`,productData).subscribe(
       (data) => {
         console.log(data);
-        let snackBarRef = this.snackBar.open('Product updated succesfully!!');
+       this.openSuccessSnackbar('Product updated succesfully!!');
      
       
  

@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpHeaders } from '@angular/common/http';
 import { error } from 'node:console';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { environment } from '../../../environments/environment.development';
 import { ApiserviceService } from '../../apiservice.service';
 import { Product } from '../../models/data-types';
-import { environment } from '../../../environments/environment.development';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add-product',
@@ -19,6 +19,13 @@ export class AddProductComponent {
   addProduct : FormGroup|any;
   addProductMessage:string|undefined;
   constructor(private api:ApiserviceService,private fb:FormBuilder,private snackBar: MatSnackBar){}
+  openSuccessSnackbar(message: string): void {
+    this.snackBar.open(message, 'Close', {
+      duration: 1000,
+      verticalPosition: 'bottom',
+      panelClass: ['custom-snackbar'],
+    });
+  }
   
   ngOnInit():void{
     this.addProduct=this.fb.group({
@@ -57,7 +64,7 @@ console.log(formData.get('imageFile'));
       const headers = new HttpHeaders().set('ResponseType','text')   
       this.api.postReturn(`${environment.BASE_API_URL}/admin/uploadImage/${data.id}`,formData,{headers}).subscribe((data)=>{
         console.log("product successfully created");
-        let snackBarRef = this.snackBar.open('Category added succesfully!!');
+      this.openSuccessSnackbar('Product added succesfully!!');
         // const confirmation=confirm('Product added succesfully')
       },(error: any)=>{
         console.log(error);

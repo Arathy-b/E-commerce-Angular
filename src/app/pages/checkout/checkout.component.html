@@ -7,21 +7,21 @@
         <h3>Shipping Address</h3>
         <form [formGroup]="checkoutForm"  action="#" method="post" class="form-box" (ngSubmit)="onsubmit()">
             <label for="address">Address</label>
-            <input type="text" id="address" name="address" required>
+            <input type="text" id="address" name="address" required formControlName="address">
             
             <label for="city">City</label>
-            <input type="text" id="city" name="city" required>
+            <input type="text" id="city" name="city" required formControlName="city">
             
             <label for="state">State</label>
-            <input type="text" id="state" name="state" required>
+            <input type="text" id="state" name="state" required formControlName="state">
     
             <label for="country">Country</label>
-            <input type="text" id="country" name="country" required>
+            <input type="text" id="country" name="country" required formControlName="country">
 
             <label for="pin">Pin Code</label>
-            <input type="text" id="pin" name="pin" required>
+            <input type="text" id="pin" name="pin" required formControlName="pin">
 
-            <button type="submit" [routerLink]="'/payment'">Place Order</button>
+            <button type="submit" >Place Order</button>
         </form>
     </div>
    

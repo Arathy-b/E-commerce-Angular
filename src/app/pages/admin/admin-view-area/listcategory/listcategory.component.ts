@@ -16,7 +16,8 @@ import { error } from 'console';
 export class ListcategoryComponent implements OnInit {
   catData:any
 
-  constructor(  private http:HttpClient,private api:ApiserviceService,
+  constructor(  private http:HttpClient,
+    private api:ApiserviceService,
     private router:Router){}
  
   ngOnInit(): void {

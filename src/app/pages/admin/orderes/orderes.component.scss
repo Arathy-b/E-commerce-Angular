@@ -1,0 +1,55 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th {
+    background-color: #f2f2f2;
+    border: 1px solid #bda0a0;
+    padding: 8px;
+    text-align: left;
+    color: rgb(90, 90, 199);
+  }
+  h1{
+    text-align: center;
+    font-weight: bold;
+    color: cornflowerblue;
+  }
+  td {
+    border: 1px solid #cac0c0;
+    padding: 8px;
+  }
+  
+ 
+  button {
+    padding: 6px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #4285f4;
+    color: white;
+  }
+  
+  button:hover {
+    background-color: #357ae8;
+  }
+  .view {
+    background-color: #4CAF50;
+    color: white;
+  }
+ 
+  .edit {
+    background-color: #FFC107;
+    color: black;
+  }
+ 
+  .delete {
+    background-color: #F44336;
+    color: white;
+  }
+ 
+  select{
+    width: 200px;
+    height: 40px;
+  }
