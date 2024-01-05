@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit{
   constructor(private api:ApiserviceService,private router:Router){}
 
   users: any[] = [];
-
+  role:any
 
   ngOnInit(): void {
 
@@ -29,6 +29,9 @@ export class NavbarComponent implements OnInit{
         if(typeof localStorage!=="undefined" && localStorage.getItem("customer")){      
           this.customer=localStorage.getItem("customer")      
           this.username=JSON.parse(this.customer).name;
+          this.role=JSON.parse(this.customer).role.roleName;
+          console.log(this.role);
+          
         }else{
           this.username=null
         }

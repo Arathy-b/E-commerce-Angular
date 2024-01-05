@@ -1,38 +1,40 @@
-
 <div class="container">
     <div class="sidebar">
         <div class="items">
-            <div class="category">
-                <button class="category" (click)="showListCategory()" >
-                    CATEGORY
-                </button>
-    
-            </div>
-           
-                
-            <div class="products">
-                <button class="products" (click)="showListProduct()">
-                    PRODUCTS
-                </button>
 
 
-                <div class="products">
-                    <button class="products" [routerLink]="'/orders'">
-                        ORDERS
+            <div class="components">
+
+                <div class="category">
+                    <button class="category" (click)="showListCategory()">
+                        CATEGORY
                     </button>
 
                     <div class="products">
-                        <button class="products" [routerLink]="'/customers'">
-                           CUSTOMERS
+                        <button class="products" (click)="showListProduct()">
+                            PRODUCTS
                         </button>
-                
-                    
-    
+
+
+                        <div class="orders">
+                            <button class="orders" [routerLink]="'/orders'">
+                                ORDERS
+                            </button>
+
+                            <div class="customers">
+                                <button class="customers" [routerLink]="'/customers'">
+                                    CUSTOMERS
+                                </button>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            
-       
+
+
         </div>
-    </div>
-    
-    
-</div>

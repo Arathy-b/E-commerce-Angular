@@ -17,6 +17,10 @@ import { OrderesComponent } from './pages/admin/orderes/orderes.component';
 import { CustomersComponent } from './pages/admin/customers/customers.component';
 import { AddProductComponent } from './pages/add-product/add-product.component';
 import { OrderConfirmationComponent } from './pages/order-confirmation/order-confirmation.component';
+import { CustomerDetailsComponent } from './pages/admin/customers/customer-details/customer-details.component';
+import { OrderDetailsComponent } from './pages/admin/orderes/order-details/order-details.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactUSComponent } from './pages/contact-us/contact-us.component';
 
 export const routes: Routes = [
     {
@@ -102,7 +106,28 @@ export const routes: Routes = [
         path:"orderConfirmation",
         component:OrderConfirmationComponent,
         title:"orderConfirmation| E-Commerce Website"
+    },
+    {
+        path:"customerDetails/:custId",
+        component:CustomerDetailsComponent,
+        title:"customerDetails| E-Commerce Website"
+    },
+    {
+        path:"orderDetails/:orderId",
+        component:OrderDetailsComponent,
+        title:"orderDetails| E-Commerce Website"
+    },
+    {
+        path:"about",
+        component:AboutComponent,
+        title:"about| E-Commerce Website"
+    },
+    {
+        path:"contactUs",
+        component:ContactUSComponent,
+        title:"contactUs| E-Commerce Website"
     }
+
    
 
 ];

@@ -21,7 +21,7 @@
   }
   .button{
     display: flex;
-    column-gap: 20px; 
+    column-gap: 10px; 
    
    height: 200px;
    margin: (10,10,10,10);
@@ -31,11 +31,12 @@
     background-color: orangered;
     color: white;
     font-weight: bold;
-  
+    column-gap: 10px;  
     padding: 10px 20px; 
     text-align: center; 
     text-decoration: none; 
     display: inline-block; 
+
     font-size: 16px; 
     margin: 2px 2px; 
     cursor: pointer

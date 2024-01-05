@@ -1,0 +1,37 @@
+<div class="customer-details">
+    <h1>Customer Details</h1>
+        <div class="details">
+            <h2>{{customers.name}}</h2>
+            <p>{{customers.email}}</p>
+            <p>{{customers.phone_number}}</p>
+          <!-- <p>{{customers.address}}</p> -->
+        </div>   
+</div>
+  
+  <div class="orders">
+    <h1>Orders</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Total Price</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of orders; track $index) {
+            <tr>
+              <td>{{item.order_id}}</td>
+              <td>{{item.title}}</td>
+              <td>{{item.quantity}}</td>
+              <td>{{item.price}}</td>
+              <td>{{item.address}}, {{item.city}}, {{item.state}}, {{item.country}}, {{item.pin}}</td>
+            </tr>
+
+        }
+       
+      </tbody>
+    </table>
+  </div>

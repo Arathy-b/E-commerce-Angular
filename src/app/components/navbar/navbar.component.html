@@ -4,18 +4,27 @@
     </div>
     <div class="items">
         <div class="item">
-            <a href="" >About</a>
-            <a href="" >Contact Us</a>
- 
+            @if (role!="ADMIN") {
+                <span class="material-symbols-outlined" [routerLink]="'/home'">
+                    home
+                    </span>            
+                <a href="" [routerLink]="'/about'">About</a>
+                <a href="" [routerLink]="'/contactUs'">Contact Us</a>   
+            }
+
         </div>
         <div class="item">
             @if(username){
                 <p [routerLink]="'/profile'">{{username}} </p>
-                <span class="material-symbols-outlined" [routerLink]="'/cart'">
-                    shopping_cart
-                    </span>
+                @if (role!="ADMIN") {
+                    <span class="material-symbols-outlined" [routerLink]="'/cart'">
+                        shopping_cart
+                        </span>
+                }
                 <span (click)="logout()">Logout</span>
-            }@else{
+            }
+          
+            @else{
                 <span [routerLink]="'/login'">Login</span>
                 <span [routerLink]="'/signup'">Sign Up</span>
             } 
