@@ -3,6 +3,8 @@
     color:white;
     display:inline-block;
     margin-top: 10px;
+    font-family: "Raleway", sans-serif;
+    font-weight: bolder;
 }
 #navbar > span{
     color: rgb(247, 247, 247);
@@ -24,7 +26,7 @@
     color: white;
     display:flex;
     justify-content: end;
-    gap:15px;
+    gap:25px;
     font-size: 18px;
     align-items: center;
     margin-top: -10px;
@@ -33,7 +35,7 @@
 a{
     text-decoration: none;
     color: #f0f8ff;
-    gap:10px;
+    gap:0px;
 }
 .details{
     display:flex;
@@ -47,4 +49,13 @@ a{
     display: flex;
     width: 95%;
     justify-content: space-between;
+}
+
+#lblCartCount {
+    font-size: 13px;
+    background-color: antiquewhite;
+    color: #e21111;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -25px; 
 }

@@ -22,7 +22,7 @@
                     <td>{{item.itemCount}}</td>
                     <td>{{item.total_price}}</td>
                     <td>
-                        <button (click)="changeStatus(item.status)">{{item.status}}</button>
+                        <button (click)="changeStatus(item.id)">{{item.status}}</button>
                     </td>     
                     <td>
                         <button class="btn delete" [routerLink]="'/orderDetails/'+item.id">View</button>

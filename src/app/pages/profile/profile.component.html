@@ -1,5 +1,6 @@
 
 <form action="">
+  
   <div class="container">
     <div class="profile-container">
         <h2>Profile</h2>
@@ -15,6 +16,7 @@
         <div class="profile-field">
           <label>Phone Number:</label>
           <span>{{ customer.phone_number }}</span>
+          <button [routerLink]="'/myorders/'+customer.id">My Orders</button>
         </div>
       </div>
     </div>

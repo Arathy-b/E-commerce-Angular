@@ -51,13 +51,17 @@ export class CartComponent implements OnInit{
   onRemoveEvent(value:any){
     if(value){
       this.getCartDetails()
+      this.router.navigate(['/cart'])
     }
   }
   updateTotal(value:any){
     this.getCartDetails()
   }
   placeOrder(){
-    this.dataService.notifyOther(this.orderItems)
+    this.dataService.notifyOther({
+      orderItems:this.orderItems,
+      cartId:this.cartProducts[0].cartId
+    })
     this.router.navigate(['/checkout'])
   }
   

@@ -23,6 +23,7 @@ export class CheckoutComponent implements OnInit {
   title='formvalidation';
   totalPrice:any;
   amount:any;
+  cartId:any
   order={
     address:'',
       city:'',
@@ -46,7 +47,8 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(){
     this.dataService.notifyObservale$.subscribe((data)=>{
-      this.orderItems = data
+      this.orderItems = data.orderItems
+      this.cartId = data.cartId
       console.log(this.orderItems);
       
     })
@@ -78,7 +80,8 @@ export class CheckoutComponent implements OnInit {
    const reqBody = {
     orderItem:this.orderItems,
     orderStatus:"PLACED",
-    address:data
+    address:data,
+    cartId:this.cartId
    }
    console.log(reqBody);
    

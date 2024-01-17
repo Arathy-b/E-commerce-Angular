@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiserviceService } from '../../../apiservice.service';
 import { RouterModule } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../../../environments/environment.development';
+import { error } from 'console';
 
 @Component({
   selector: 'app-orderes',
@@ -31,8 +33,17 @@ export class OrderesComponent  implements OnInit{
     })
     
   }
-  changeStatus(currentStatus:any){
-    
+  changeStatus(orderId:any){
+    const headers = new HttpHeaders().set("ResponseType","text")
+    this.api.postReturn(`${environment.BASE_API_URL}/admin/order/${orderId}/changeStatus`,null,{headers}).subscribe((data)=>{
+      if(data){
+        this.ngOnInit()
+      }
+      
+    },(error)=>{
+      console.log(error);
+      
+    })
   }
 
 }

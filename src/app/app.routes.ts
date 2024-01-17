@@ -21,6 +21,7 @@ import { CustomerDetailsComponent } from './pages/admin/customers/customer-detai
 import { OrderDetailsComponent } from './pages/admin/orderes/order-details/order-details.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactUSComponent } from './pages/contact-us/contact-us.component';
+import { MyordersComponent } from './pages/profile/myorders/myorders.component';
 
 export const routes: Routes = [
     {
@@ -126,7 +127,13 @@ export const routes: Routes = [
         path:"contactUs",
         component:ContactUSComponent,
         title:"contactUs| E-Commerce Website"
+    },
+    {
+        path:"myorders/:custId",
+        component:MyordersComponent,
+        title:"myorders| E-Commerce Website"
     }
+
 
    
 

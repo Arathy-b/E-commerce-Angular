@@ -1,6 +1,6 @@
 <div class="mydisplaybar">
     <div id="navbar">
-        <span [routerLink]="'/home'">Buyers Edge</span>
+        <span [routerLink]="'/home'">ShopScape</span>
     </div>
     <div class="items">
         <div class="item">
@@ -19,6 +19,8 @@
                 @if (role!="ADMIN") {
                     <span class="material-symbols-outlined" [routerLink]="'/cart'">
                         shopping_cart
+                         
+                        <span id='lblCartCount'> {{cartItems}} </span>
                         </span>
                 }
                 <span (click)="logout()">Logout</span>

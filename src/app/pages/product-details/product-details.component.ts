@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ApiserviceService } from '../../apiservice.service';
 import { HttpHeaders } from '@angular/common/http';
+import { DataserviceService } from '../../dataservice.service';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class ProductDetailsComponent implements OnInit{
   showGoToCart:boolean=false
   productDetails:any
   productQuantity:number=1;
-  constructor(private activeRoute:ActivatedRoute,private api:ApiserviceService,private router:Router) { }
+  constructor(private activeRoute:ActivatedRoute,private api:ApiserviceService,private router:Router,private dataService:DataserviceService) { }
 
   ngOnInit(): void {
     this.activeRoute.params.subscribe(s => {
@@ -41,6 +42,8 @@ export class ProductDetailsComponent implements OnInit{
   getCartDetails(){
     this.api.getReturn(`http://localhost:8084/products/cart`).subscribe((data:any)=>{
       this.cartProducts= data
+      console.log(this.cartProducts[0].cartId);
+      
         this.showGoToCart=this.cartProducts.some(r => r.id === this.productDetails.id);      
     },(error)=>{
       console.log(error);
@@ -56,11 +59,24 @@ export class ProductDetailsComponent implements OnInit{
     
   }
   buyNow(){
+    this.getUserCart()
+      this.dataService.notifyOther({
+        orderItems:[{
+          quantity:1,
+          productId:this.productDetails.id
+        }],
+        cartId:null
+      })
+      
+      this.router.navigate(['/checkout'])
     
-        this.router.navigate(['checkout'])
       }
    
-    
+      getUserCart(){
+        this.api.getReturn(`http://localhost:8084/products/category/${this.productDetails.category.id}`).subscribe((data:any)=>{
+          this.products = data.filter((obj1:any) => this.productDetails.id !== obj1.id);
+      },(error)=>console.log(error))
+      }
     getProductsByCat(){
       this.api.getReturn(`http://localhost:8084/products/category/${this.productDetails.category.id}`).subscribe((data:any)=>{
         this.products = data.filter((obj1:any) => this.productDetails.id !== obj1.id);

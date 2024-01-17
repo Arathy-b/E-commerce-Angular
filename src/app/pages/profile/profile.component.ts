@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiserviceService } from '../../apiservice.service';
 import { RouterModule } from '@angular/router';
+import { log } from 'console';
 
 @Component({
   selector: 'app-profile',
@@ -23,6 +24,8 @@ export class ProfileComponent {
  
     this.api.getReturn(apiUrl, customerData).subscribe((customerData: any) => {
       this.customer = customerData;
+      console.log(customerData);
+      
     });
   }
 }
