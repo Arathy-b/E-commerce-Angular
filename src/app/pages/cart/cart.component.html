@@ -15,7 +15,9 @@
     <div class="cart-summary">
         <button class="btn btn-continue" [routerLink]="'/home'">Continue Shopping</button>
         <div class="summary-total">
-            <span>Total: {{totalPrice}}</span>
+            <span>Total: <span class="material-symbols-outlined">
+                currency_rupee
+                </span> {{totalPrice}}.00</span>
             <span class="total-price"></span>
         </div>
         <button class="btn btn-checkout" (click)="placeOrder()">Place order</button>

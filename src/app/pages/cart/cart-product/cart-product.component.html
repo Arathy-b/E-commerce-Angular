@@ -3,12 +3,16 @@
         <img [src]="'http://localhost:8084/image/view/'+productDetails?.id+'/'+productDetails?.image" alt="" class="cart-item-image">
         <span class="cart-item-title">{{productDetails.title}}</span>
     </span>
-    <span class="price">{{productDetails.price}}</span>
+    <span class="price"><span class="material-symbols-outlined">
+        currency_rupee
+        </span>{{productDetails.price}}.00</span>
     <span class="quantity">
         <button class="minus"  (click)="onMinus()">-</button>
         <span class="quantity" #quantity>{{productDetails.quantity}}</span>
         <button class="plus" (click)="onPlus()">+</button>
     </span>
-    <span class="subtotal">{{subTotal}}</span>
+    <span class="subtotal"><span class="material-symbols-outlined">
+        currency_rupee
+        </span>{{subTotal}}.00</span>
     <button class="remove" (click)="removeProduct()">remove</button>
 </div>
