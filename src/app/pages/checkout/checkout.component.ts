@@ -94,7 +94,7 @@ export class CheckoutComponent implements OnInit {
 
       this.http.getReturn("http://localhost:8084/api/orders/createTransaction/"+data.totalPrice).subscribe(
         (response) => {
-          console.log(response);
+          console.log(response,"kjhjgvbkj");
           this.openTransactionModel(response);
           
         },

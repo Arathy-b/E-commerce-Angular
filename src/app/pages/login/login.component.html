@@ -20,7 +20,7 @@
 
     <div class="row">    
         <label for="password" >Password</label>
-        <input type="text"  formControlName="password"  id="password" placeholder="Please enter your password" >
+        <input type="password"  formControlName="password"  id="password" placeholder="Please enter your password" >
         @if(submitted){
             @if(loginForm.controls["password"].invalid && loginForm.controls["password"].dirty || loginForm.controls["password"].touched){
                 <div class="item-error">

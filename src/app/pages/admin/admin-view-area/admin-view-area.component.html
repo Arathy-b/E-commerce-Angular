@@ -1,18 +1,52 @@
 @switch (showWhat) {
+
     @case ("listProduct") {
         <app-list-product></app-list-product>
 
     }
     @case ("listCategory") {
-        <app-listcategory></app-listcategory>
+        <app-listcategory></app-listcategory> 
+
+    }
+    @case ("orders") {
+        <app-orderes></app-orderes>
+
+
+    }
+    @case ("customers") {
+        <app-customers></app-customers>
+        
+    }
+    @default {
+        <div class="content">
+
+            <div class="content-item">
+                <h2>Category </h2>
+                <h4>Total category:  {{count[1].count}}</h4>
+                <button onclick="viewDetails('category')" [routerLink]="'/listcategory'">View Details</button>
+            </div>
     
+            <div class="content-item">
+                <h2>Products</h2>
+                <h4>Total products:  {{count[0].count}}</h4>
+                <button onclick="viewDetails('product')" [routerLink]="'/listproduct'">View Details</button>
+            </div>
+    
+            <div class="content-item">
+                <h2>Orders</h2>
+                <h4>Total orders:  {{count[3].count}}</h4>
+                <button onclick="viewDetails('orders')" [routerLink]="'/orders'">View Details</button>
+            </div>
+    
+            <div class="content-item">
+                <h2>Customers</h2>
+                <h4>Total customers:  {{count[2].count}}</h4>
+                <button onclick="viewDetails('customers')"  [routerLink]="'/customers'">View Details</button>
+            </div>
+        </div>
+        }
+  
+  
 
-    }
-    @case ("listOreders") {
 
-    }
-
-    @case("listCustomers"){
-
-    }
 }

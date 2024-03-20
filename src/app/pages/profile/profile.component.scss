@@ -13,17 +13,22 @@
 
 }
 button{
-  position: absolute;
   top: 80%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
   padding: 10px 20px;
   background-color: #4CAF50;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
   font-size: 16px;
+  cursor: pointer;
 }
+button:hover{
+  background-color: rgb(27, 116, 27);
+  transform: scale(1.05);
+ }
 
   .profile-container {
     font-family: Arial, sans-serif;
@@ -35,7 +40,11 @@ button{
   .profile-field {
     margin-bottom: 15px;
   }
-  
+  .button-class{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+  }
   label {
     font-weight: bold;
     display: inline-block;

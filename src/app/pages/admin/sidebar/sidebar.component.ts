@@ -16,6 +16,10 @@ export class SidebarComponent implements OnInit {
    ngOnInit(): void {
     
   }
+  showDefault(){
+    this.dataService.notifyOther("default")
+
+  }
   showListProduct(){
     console.log("kiomn");
     this.dataService.notifyOther("listProduct")
@@ -25,13 +29,13 @@ export class SidebarComponent implements OnInit {
     
     this.dataService.notifyOther("listCategory")
     }
+    showorders(){
+      this.dataService.notifyOther("orders")
+    }
+    showCustomers(){
+      this.dataService.notifyOther("customers")
+    }
 
 
-      showListCustomers() {
-        console.log("kiomn");
-        
-        this.dataService.notifyOther("listCustomers")
-        }
-    
 
 }

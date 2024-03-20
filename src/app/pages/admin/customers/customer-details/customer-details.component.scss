@@ -12,17 +12,33 @@
     margin-bottom: 10px;
   }
   
-  table {
-    width: 100%;
-    border-collapse: collapse;
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: cornflowerblue;
+    text-align: center;
   }
   
-  th, td {
+  table {
+    width: 99%;
+    border-collapse: collapse;
+    padding: 15px;
+    border-bottom: 1px solid #3b2c2c;
+  }
+    
+  th {
+    border: 1px solid #bda0a0;
+    padding: 8px;
+    text-align: left;
+    font-weight: bold;
+    background-color: #555;
+    color: #fff;
+  }
+  
+   td {
     border: 1px solid #ccc;
     padding: 8px;
     text-align: left;
   }
   
-  th {
-    background-color: #f2f2f2;
-  }

@@ -1,6 +1,6 @@
 <div class="container">
     
-    <button (click)="onAddCategory()" class="addcat" [routerLink]="'/addcategory'">Add Category</button>
+    <button (click)="onAddCategory()" class="addcat" >Add Category</button>
     <ul class="cat-list">
         <table>
             <thead>
@@ -19,6 +19,17 @@
         </table>
 
     </ul>
+
+    <div class="add-category">
+        <h3>Add new category</h3>
+        <form [formGroup]="addCategory" action="" method="post" class="form-box" (ngSubmit)="submit()">
+        <input type="text" class="form-input" placeholder="enter the new category" name="name" formControlName="name"/>
+    <div class="add-cat"> 
+        <button type="submit">Add Category</button>
+    </div>
+        
+    </form>
+    </div>
 
 
 </div>

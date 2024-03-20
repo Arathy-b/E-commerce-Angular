@@ -5,36 +5,58 @@
 
             <div class="components">
 
+                <div class="dashboard"(click)="showDefault()" >
+                    
+                <button class="dashboard">
+                    <span class="material-symbols-outlined">
+                        dashboard
+                         
+                     
+                 </span>
+                    Dashboard
+                </button>
+                  
+            </div>
+
                 <div class="category">
                     <button class="category" (click)="showListCategory()">
-                        CATEGORY
+                        <span class="material-symbols-outlined">
+                            category
+                            </span>
+                        Manage Category
                     </button>
+                </div>
 
                     <div class="products">
                         <button class="products" (click)="showListProduct()">
-                            PRODUCTS
+                            <span class="material-symbols-outlined">
+                                shopping_bag
+                                </span>
+                            Manage Products
                         </button>
+                    </div>
 
 
                         <div class="orders">
-                            <button class="orders" [routerLink]="'/orders'">
-                                ORDERS
+                            <button class="orders" (click)="showorders()">
+                                <span class="material-symbols-outlined">
+                                    lists
+                                    </span>
+                                Manage Orders
                             </button>
+                        </div>
 
                             <div class="customers">
-                                <button class="customers" [routerLink]="'/customers'">
-                                    CUSTOMERS
+                                <button class="customers" (click)="showCustomers()">
+                                    <span class="material-symbols-outlined">
+                                        group
+                                        </span>
+                                    Manage Customers
                                 </button>
-
-
-
 
                             </div>
                         </div>
                     </div>
-
                 </div>
-            </div>
-
-
-        </div>
+    </div>
+   

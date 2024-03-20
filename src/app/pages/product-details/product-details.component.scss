@@ -41,15 +41,22 @@ h1{
 button{
     padding: 10px 20px;
     border: 1px solid #ddd;
-    // background-color: #fff;
     cursor: pointer;
     margin: 10px 0;
     color: rgb(242, 238, 247);
     background-color:orangered;
     font-size: small;
     text-transform: uppercase;
+    cursor: pointer;
 
 }
+button:hover{
+  background-color: #2078ca;
+  color: white;
+  background-color: greenyellow;
+  background: linear-gradient(rgb(156, 60, 60),rgb(85, 8, 8),red);
+  transform: scale(1.05);
+ }
 
 .bottom{
     display: flex;
@@ -120,10 +127,14 @@ button{
 
 
  
-  
- 
   .form-button1{
     background-color: rgb(245, 180, 3);
     color: white;
     font-weight: bold;
   }
+  .form-button1:hover{
+    color: white;
+    background-color: greenyellow;
+    background: linear-gradient(greenyellow);
+    transform: scale(1.05);
+   }

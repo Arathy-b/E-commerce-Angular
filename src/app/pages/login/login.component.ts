@@ -5,6 +5,7 @@ import { ApiserviceService } from '../../apiservice.service';
 import { error, log } from 'console';
 import { environment } from '../../../environments/environment.development';
 import { Router, RouterModule } from '@angular/router';
+import customers from 'razorpay/dist/types/customers';
 
 
 @Component({
@@ -20,6 +21,9 @@ export class LoginComponent {
   submitted:boolean=false;
   loginSuccess:boolean | any;
   errorMessage:string |any;
+  customerDetails: any;
+  userRole: any;
+  userRoles: any;
   
 
   constructor(private fb : FormBuilder,private http:ApiserviceService,private router:Router){}
@@ -58,14 +62,31 @@ onsubmit(){
       this.loginForm.reset();
       const jwtToken:string = data.response;
       localStorage.setItem("token",jwtToken)
+
+  
+      
       this.http.getReturn(`${environment.BASE_API_URL}/customer/getCustomerDetails`).subscribe((data)=>{
-        localStorage.setItem("customer",JSON.stringify(data))        
-        this.router.navigate(['/home'])
+        localStorage.setItem("customer",JSON.stringify(data)) 
+        
+        this.customerDetails=localStorage.getItem("customer");  
+        this.userRole=JSON.parse(this.customerDetails).role;
+        this.userRoles=this.userRole.roleName;
+  
+        if(this.userRoles=="ADMIN"){
+          this.router.navigate(['/admin'])
+        }
+        else{
+          this.router.navigate(['/home'])
+  
+        }
+        
       },(error)=>{
         console.log(error);
         this.errorMessage = data.response;
       this.loginSuccess = false;
       })
+
+ 
 
     }else{
       this.errorMessage = data.response;

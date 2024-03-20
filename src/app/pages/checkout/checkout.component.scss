@@ -50,3 +50,10 @@ form button {
 form button:hover {
     background-color: #45a049;
 }
+button:hover{
+    background-color: #2078ca;
+    color: white;
+    background-color: greenyellow;
+    background: linear-gradient(rgb(156, 60, 60),rgb(85, 8, 8),red);
+    transform: scale(1.05);
+   }

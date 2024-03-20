@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ApiserviceService } from '../../../apiservice.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -26,7 +26,8 @@ export class UpdateProductComponent implements OnInit {
 
   productId:any;
   editProductFormVisible: boolean = false;
-  constructor(  private http:HttpClient,private api:ApiserviceService,
+  productDetails:any
+  constructor(  private fb: FormBuilder, private http:HttpClient,private api:ApiserviceService,
     private router:Router,
     private activeRoute: ActivatedRoute,private snackBar: MatSnackBar){}
 
@@ -38,20 +39,28 @@ export class UpdateProductComponent implements OnInit {
       });
     }
   ngOnInit(): void {
-    this.api.getReturn(`http://localhost:8084/products/View/${this.productId}`).subscribe((data:any)=>{
-   
-    },(error)=>console.log(error))
-  
+    
     this.activeRoute.params.subscribe(s => {
       this.productId=s["productId"]
     });
-    this.editProductForm = new FormGroup({
-      title: new FormControl(null),
-      description: new FormControl(null),
-      price: new FormControl(null)
+    this.editProductForm = this.fb.group({
+      title:['',[]],
+      description:['',[]],
+      price: ['',[]]
 
-   
-    });
+  })
+    this.api.getReturn(`http://localhost:8084/products/View/${this.productId}`).subscribe((data:any)=>{
+      this.productDetails = data
+      this.editProductForm = this.fb.group({
+        title:[data.title,[]],
+        description:[data.description,[]],
+        price: [data.price,[]]
+  
+    })
+      
+    },(error)=>console.log(error))
+    
+    
   }
   onUpdateProduct(){
     const formValues=this.editProductForm.getRawValue();

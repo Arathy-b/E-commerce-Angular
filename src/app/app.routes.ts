@@ -11,7 +11,6 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { AddcategoryComponent } from './pages/admin/addcategory/addcategory.component';
 import { UpdateProductComponent } from './pages/admin/update-product/update-product.component';
 import { OrderesComponent } from './pages/admin/orderes/orderes.component';
 import { CustomersComponent } from './pages/admin/customers/customers.component';
@@ -22,6 +21,8 @@ import { OrderDetailsComponent } from './pages/admin/orderes/order-details/order
 import { AboutComponent } from './pages/about/about.component';
 import { ContactUSComponent } from './pages/contact-us/contact-us.component';
 import { MyordersComponent } from './pages/profile/myorders/myorders.component';
+import { ListProductComponent } from './pages/admin/admin-view-area/list-product/list-product.component';
+import { ListcategoryComponent } from './pages/admin/admin-view-area/listcategory/listcategory.component';
 
 export const routes: Routes = [
     {
@@ -51,12 +52,7 @@ export const routes: Routes = [
          component:AddProductComponent,
         title:"AddProduct | E-Commerce Website"
      },
-  
-     {
-        path:"addcategory",
-         component:AddcategoryComponent,
-        title:"AddCategory | E-Commerce Website"
-     },
+
      {
         path:"updateproduct/:productId",
          component:UpdateProductComponent,
@@ -132,6 +128,16 @@ export const routes: Routes = [
         path:"myorders/:custId",
         component:MyordersComponent,
         title:"myorders| E-Commerce Website"
+    },
+    {
+        path:"listproduct",
+        component:ListProductComponent,
+        title:"listproduct| E-Commerce Website"
+    },
+    {
+        path:"listcategory",
+        component:ListcategoryComponent,
+        title:"listcategory| E-Commerce Website"
     }
 
 

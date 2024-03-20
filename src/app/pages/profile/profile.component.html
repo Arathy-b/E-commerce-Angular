@@ -16,8 +16,10 @@
         <div class="profile-field">
           <label>Phone Number:</label>
           <span>{{ customer.phone_number }}</span>
-          <button [routerLink]="'/myorders/'+customer.id">My Orders</button>
-        </div>
+          
+      </div>
+      <div class="button-class">
+        <button [routerLink]="'/myorders/'+customer.id">My Orders</button></div>
       </div>
     </div>
   </form>

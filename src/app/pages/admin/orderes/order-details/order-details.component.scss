@@ -1,23 +1,41 @@
 .order-list {
-    margin-bottom: 40px;
-  }
+  margin: 0 auto;
+  width: 80%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: scroll;
+    overflow-x: hidden;
+    height: 460px;
+}
   
   h1 {
     font-size: 24px;
     margin-bottom: 20px;
+    font-weight: bold;
+    color: cornflowerblue;
+    text-align: center;
   }
   
   table {
-    width: 100%;
+    width: 99%;
     border-collapse: collapse;
+    padding: 15px;
+    border-bottom: 1px solid #3b2c2c;
+  }
+    
+  th {
+    border: 1px solid #bda0a0;
+    padding: 8px;
+    text-align: left;
+    font-weight: bold;
+    background-color: #555;
+    color: #fff;
   }
   
-  th, td {
+   td {
     border: 1px solid #ccc;
     padding: 8px;
     text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
   }

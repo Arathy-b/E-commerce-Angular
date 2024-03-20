@@ -1,6 +1,7 @@
 .container{
     height:100%;
     display: flex;
+    width: 100%;
 
 }
 app-sidebar{
@@ -10,4 +11,45 @@ app-sidebar{
 app-admin-view-area{
     width: 80%;
     display: flex;
+}
+
+.content {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    width: 100%;
+    margin: 10px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%; 
+    margin-left: 20%; 
+    padding: 20px;
+    display: flex;
+       flex-wrap: wrap;
+}
+.content-item {
+    
+    margin: 10px;
+    margin-right: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+ }
+.content-item h2 {
+    color: #333;
+    font-weight: bold;
+}
+.content-item button {
+    padding: 10px;
+    background-color: #0b912c;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
